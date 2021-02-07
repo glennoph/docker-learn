@@ -16,7 +16,7 @@ RUN apt-get update \
 - ADD http://source-file target
 - ADD compressed.tar.gz extracted-target
 - ENV env_var_name env_value
-- env reference ${env_var_name}
+  - env reference ${env_var_name}
 - ARG var_name_1 # var value is passed via docker build : 
 
 `docker build --build-arg var_name_1=value1 .`
