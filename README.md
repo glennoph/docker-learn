@@ -45,3 +45,34 @@ RUN apt-get update \
 - `docker push newregistry/newimage:newtag`
 ### pull image from docker hub
 - `docker pull REG/IMAGE:tag`
+## Container
+### Command
+- `docker run [OPTIONS] IMAGE [COMMAND] [args]`
+- `docker ps -a` # list all containers
+#### docker run options
+
+| Options | Meaning                       |
+|---------|-------------------------------|
+| -i      | interactive, keeps stdin open |
+| -d      | detached, run in background   |
+| -t      | pseudo-tty shell              |
+| -it     | launched in shell             |
+| -id     | interactive & detached        |
+|         |                               |
+
+### Clean up 
+- `docker rm -f $(docker ps -aq)` # clean up all containers with force
+- `docker rmi $(docker images -q)` # clean up all images
+### Pull and Run, 1 command
+- `docker run -it IMAGE COMMAND` # pull and run image in a shell
+### Name a container
+- `docker rename OLD NEW` # where OLD is from ps -a/NAMES
+- `docker stop ` # stop container
+- `docker start C1 [C2] ` # start container
+- `docker restart C` # restart container
+- `docker restart -t 10  C` # restart container after 10 seconds
+- `docker exec -it CONTAINER COMMAND` # execute command in running container in a shell
+- `docker exec -it -u USER CONTAINER COMMAND` # execute command in running container in a shell as USER
+
+
+
