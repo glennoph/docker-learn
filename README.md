@@ -3,8 +3,8 @@ learning docker
 ## build initial docker file
 [01-Dockerfile](./01-Dockerfile)
 ## Commands
-- docker history
-- docker inspect
+- `docker history`
+- `docker inspect`
 ## Good Practices
 - RUN commands create separate layer... 
 
@@ -26,6 +26,13 @@ RUN apt-get update \
 `ENV var_name_2=${var_name_2}` # env var uses the arg 
 
 - NB ARG and ENV values are displayed in clear text, no pw
+## Docker Images
+- `docker images` # list of images
+- `docker images -q` # list of images quiet (only sha)
+- `docker ps -q` # list of containers quiet (only sha)
+### remove all images
+- `docker rmi $(docker ps -a -q)` # remove all images
+
 
   
 
