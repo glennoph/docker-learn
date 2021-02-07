@@ -18,9 +18,13 @@ RUN apt-get update \
 - ENV env_var_name env_value
 - env reference ${env_var_name}
 - ARG var_name_1 # var value is passed via docker build : 
-  docker build --build-arg var_name_1=value1 .
+
+`docker build --build-arg var_name_1=value1 .`
+
 - ARG var_name_2=value2 # default value is value2
-  ENV var_name_2=${var_name_2} # env var uses the arg 
+  
+`ENV var_name_2=${var_name_2}` # env var uses the arg 
+
 - NB ARG and ENV values are displayed in clear text, no pw
 
   
